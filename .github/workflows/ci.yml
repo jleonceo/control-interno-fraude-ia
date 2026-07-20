@@ -1,0 +1,31 @@
+name: ci
+
+# Por que existe: hasta el 20/07/2026 este repo no tenia CI. De 20 repos publicos,
+# solo uno lo tenia — y el CI es la unica vigilancia que sobrevive a que el portatil
+# este apagado o en bateria (la tarea programada local llevaba dos dias sin ejecutarse
+# por eso exactamente).
+#
+# La suite se verifico en verde en local antes de cablear esto. Las versiones de Python
+# de la matriz NO se han probado en local: si alguna sale roja en el primer push, es
+# informacion util, no un fallo del repo.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Biblioteca estandar unicamente: no hay nada que instalar.
+      - name: Bateria forense completa (con sus controles negativos)
+        run: python probar_todo.py
