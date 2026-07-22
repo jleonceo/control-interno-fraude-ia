@@ -26,7 +26,7 @@ juntos en el tiempo. Quien paga dos veces deja dos líneas casi calcadas. Cada u
 huellas tiene una prueba que la busca, y cada prueba trae su **control negativo**: la lista
 de lo que NO se marca, para no confundir lo normal con lo sospechoso.
 
-### El marco: control interno, no solo trucos
+### El marco de control interno
 
 Las pruebas no van sueltas. Se ordenan dentro de un marco de control interno de los que se
 usan de verdad (COSO, en su versión ligera). El marco tiene cinco componentes; aquí se ve
@@ -46,7 +46,7 @@ una pieza a caballo entre el entorno y las actividades, la **segregación de fun
 quien genera un asiento no sea quien lo aprueba): existe en el flujo y se puede auditar, pero
 aquí se marca como parcial porque no se inventa, se comprueba.
 
-### Las pruebas (código puro, verde y reproducible)
+### Las pruebas (código puro y reproducible que pasa en verde)
 
 | Prueba | Qué huella busca | Sobre datos reales |
 |---|---|---|
@@ -134,7 +134,7 @@ close together in time. Whoever pays twice leaves two near-identical lines. Each
 test that looks for it, and each test ships its **negative control**: the list of what is NOT
 flagged, so the normal is not mistaken for the suspicious.
 
-### The frame: internal control, not just tricks
+### The internal-control framework
 
 The tests are not loose. They sit inside a real internal-control framework (COSO, in its
 light version). The framework has five components; here you can see which part of each is
@@ -154,7 +154,7 @@ between environment and activities, **segregation of duties** (whoever creates a
 whoever approves it): it exists in the flow and can be audited, but here it is marked partial
 because it is not invented, it is checked.
 
-### The tests (pure code, green and reproducible)
+### The tests (pure and reproducible code that passes green)
 
 | Test | What trace it looks for | On real data |
 |---|---|---|
