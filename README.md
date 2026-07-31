@@ -14,17 +14,17 @@ No dependencies (standard Python only), no database, no AI, no network.
 
 ### El problema
 
-Imagina una empresa con una regla que cualquiera entiende: las compras por encima de tres mil euros las firma el director, y por debajo basta con la firma del responsable del área. La regla existe para que nadie mueva sumas gordas sin un segundo par de ojos encima.
+Imagina una empresa con una regla que cualquiera entiende: las compras por encima de tres mil euros las firma el director, y por debajo basta con la firma del responsable del área. La regla existe para que nadie mueva sumas gordas sin un segundo par de ojos encima. Llega el responsable de compras, que encarga una reforma de nueve mil euros y pide al proveedor tres facturas de tres mil, con números distintos y separadas por unos días. Las firma él. Ninguna llama la atención, porque cada una cuadra, lleva su número y trae su fecha y su proveedor.
 
-Llega el responsable de compras, que encarga una reforma de nueve mil euros y pide al proveedor tres facturas de tres mil, con números distintos y separadas por unos días. Las firma él. Ninguna llama la atención, porque cada una cuadra, lleva su número y trae su fecha y su proveedor.
+El problema solo asoma al mirar las tres facturas a la vez, cosa que nadie hace, porque el libro de un año trae miles de líneas y quien lo revisa tiene una jornada de ocho horas. Pasa igual con la factura pagada dos veces, o con el proveedor que cobra sin que nadie encuentre un papel suyo archivado.
 
-El problema solo asoma al mirar las tres facturas a la vez, cosa que nadie hace, porque el libro de un año trae miles de líneas y quien lo revisa tiene una jornada de ocho horas. Pasa igual con la factura pagada dos veces, o con el proveedor que cobra sin que nadie encuentre un papel suyo archivado. Ahí está la parte difícil del oficio: apuntar lo que pasó es rutina, mientras que dar con lo que desentona entre miles de apuntes correctos exige mirar el libro entero de golpe.
+Ahí está la parte difícil del oficio: apuntar lo que pasó es rutina, mientras que dar con lo que desentona entre miles de apuntes correctos exige mirar el libro entero de golpe.
 
 ### Qué hay dentro
 
-Un repositorio es una carpeta de trabajo publicada en internet con todo su historial de cambios. Este contiene cuatro programas, un libro de asientos inventado y dos textos de explicación.
+Un repositorio es una carpeta de trabajo publicada en internet con todo su historial de cambios. Este contiene cuatro programas, un libro de asientos inventado y dos textos de explicación. Le entregas un libro y te devuelve una lista de líneas que conviene mirar de cerca. Pasa ocho pruebas y ninguna acusa a nadie, porque cada una propone candidatos para que después una persona los examine con el expediente delante.
 
-Le entregas un libro y te devuelve una lista de líneas que conviene mirar de cerca. Pasa ocho pruebas y ninguna acusa a nadie, porque cada una propone candidatos para que después una persona los examine con el expediente delante. Un candidato no es una condena.
+Un candidato no es una condena.
 
 Todo lo que hace son cuentas, sin inteligencia artificial dentro, sin base de datos y sin nada que instalar. El proyecto del que salió esta pieza sí funciona con modelos de lenguaje, y necesitaba debajo algo que comprobara sumando y diera siempre el mismo resultado.
 
@@ -34,9 +34,9 @@ Se llama **determinista** a la prueba que contesta siempre lo mismo ante la mism
 
 **Control interno** es el conjunto de reglas que una empresa se pone para que sus cuentas sean fiables, y **COSO** es el marco más usado para ordenarlas. Tiene cinco componentes, de los cuales aquí solo uno es código que se ejecuta: el tercero, las actividades de control. Los demás quedan como contexto, salvo el cuarto, que aparece marcado como parcial. Conviene fijarse en esa franqueza, porque un proyecto que dijera cubrir los cinco estaría vendiendo humo.
 
-Para entender la prueba más famosa hace falta un rodeo. Coge las facturas de un año y apunta solo con qué cifra empieza cada importe. ¿Cuántas empezarán por 1 y cuántas por 9? El instinto dirá que una novena parte cada una, alrededor del 11 %, y en esto el instinto falla de lleno. En cualquier conjunto de cifras que abarque desde decenas hasta decenas de miles, el 1 sale como primera cifra el 30,1 % de las veces y el 9 apenas el 4,6 %.
+Para entender la prueba más famosa hace falta un rodeo. Coge las facturas de un año y apunta solo con qué cifra empieza cada importe. ¿Cuántas empezarán por 1 y cuántas por 9? El instinto dirá que una novena parte cada una, alrededor del 11 %, y en esto el instinto falla de lleno. En cualquier conjunto de cifras que abarque desde decenas hasta decenas de miles, el 1 sale como primera cifra el 30,1 % de las veces y el 9 apenas el 4,6 %. Fíjate en un importe que crece y verás la razón. Cien euros tienen que doblarse para dejar atrás el 1 y llegar a 200, mientras que a 900 le basta con subir un 11 % para volver otra vez al 1. Un importe pasa mucho más tiempo empezando por 1 que por 9, y una lista de facturas es la foto de muchos importes repartidos por ese recorrido.
 
-Fíjate en un importe que crece y verás la razón. Cien euros tienen que doblarse para dejar atrás el 1 y llegar a 200, mientras que a 900 le basta con subir un 11 % para volver otra vez al 1. Un importe pasa mucho más tiempo empezando por 1 que por 9, y una lista de facturas es la foto de muchos importes repartidos por ese recorrido. Ese reparto se llama **ley de Benford**.
+Ese reparto se llama **ley de Benford**.
 
 La relación con el fraude está en que quien se inventa cifras nunca las inventa siguiendo esa curva natural. Escribe importes creíbles, casi siempre pegados al límite que puede aprobar él solo, de modo que esos importes empiezan una y otra vez por las mismas dos cifras. La curva lo nota aunque cada factura, mirada por separado, parezca normal.
 
@@ -123,9 +123,7 @@ Hay una cuarta que el repositorio no enseña en ningún sitio, y sale de aplicar
 
 ### Cuándo no sirve
 
-Dos de las ocho pruebas están marcadas como informativas en la tabla de arriba, y una tercera solo como señal de apoyo. Que un proveedor no tenga papeles archivados suele responder a un apunte antiguo mal documentado, o a una migración hecha con prisa, de modo que tratarlo como fraude sería el error de bulto del proyecto. Los huecos solo valen sobre un libro cuya numeración esté garantizada como contigua.
-
-Benford queda fuera de juego en una contabilidad pequeña. Fíjate en el subconjunto de importes elegidos a mano, que es donde miraría quien defrauda: suele tener unas decenas de líneas, muy lejos de los cinco mil necesarios.
+Dos de las ocho pruebas están marcadas como informativas en la tabla de arriba, y una tercera solo como señal de apoyo. Que un proveedor no tenga papeles archivados suele responder a un apunte antiguo mal documentado, o a una migración hecha con prisa, de modo que tratarlo como fraude sería el error de bulto del proyecto. Los huecos solo valen sobre un libro cuya numeración esté garantizada como contigua. Benford queda fuera de juego en una contabilidad pequeña. Fíjate en el subconjunto de importes elegidos a mano, que es donde miraría quien defrauda: suele tener unas decenas de líneas, muy lejos de los cinco mil necesarios.
 
 ### Frontera honesta
 
@@ -172,17 +170,17 @@ Este repo es la pieza de **control interno** de una serie sobre construir y eval
 
 ### The problem
 
-Picture a company with a rule anyone understands: purchases above three thousand euros are signed by the director, and below that the area manager's signature is enough. The rule exists so that nobody moves large sums without a second pair of eyes on them.
+Picture a company with a rule anyone understands: purchases above three thousand euros are signed by the director, and below that the area manager's signature is enough. The rule exists so that nobody moves large sums without a second pair of eyes on them. In comes the purchasing manager, who orders a nine thousand euro refurbishment and asks the supplier for three invoices of three thousand, with different numbers and a few days apart. He signs them himself. None of them draws attention, because each one adds up, carries its number and shows its date and its supplier.
 
-In comes the purchasing manager, who orders a nine thousand euro refurbishment and asks the supplier for three invoices of three thousand, with different numbers and a few days apart. He signs them himself. None of them draws attention, because each one adds up, carries its number and shows its date and its supplier.
+The problem only surfaces when the three invoices are looked at together, which nobody does, because a year's ledger holds thousands of lines and whoever reviews it works an eight-hour day. The same goes for the invoice paid twice, or for the supplier who gets paid without anyone finding a single filed document.
 
-The problem only surfaces when the three invoices are looked at together, which nobody does, because a year's ledger holds thousands of lines and whoever reviews it works an eight-hour day. The same goes for the invoice paid twice, or for the supplier who gets paid without anyone finding a single filed document. That is the hard part of the trade: recording what happened is routine, whereas spotting what is out of place among thousands of correct entries requires looking at the whole ledger at once.
+That is the hard part of the trade: recording what happened is routine, whereas spotting what is out of place among thousands of correct entries requires looking at the whole ledger at once.
 
 ### What is inside
 
-A repository is a working folder published on the internet together with its full history of changes. This one holds four programs, an invented ledger and two explanatory texts.
+A repository is a working folder published on the internet together with its full history of changes. This one holds four programs, an invented ledger and two explanatory texts. You hand it a ledger and it returns a list of lines worth a closer look. It runs eight tests and none of them accuses anybody, because each one proposes candidates for a person to examine afterwards with the file in front of them.
 
-You hand it a ledger and it returns a list of lines worth a closer look. It runs eight tests and none of them accuses anybody, because each one proposes candidates for a person to examine afterwards with the file in front of them. A candidate is not a conviction.
+A candidate is not a conviction.
 
 Everything it does is arithmetic, with no artificial intelligence inside, no database and nothing to install. The project this piece came out of does work with language models, so it needed something underneath that checked by adding up and always gave the same answer.
 
@@ -192,9 +190,9 @@ A test is called **deterministic** when it answers the same thing every time for
 
 **Internal control** is the set of rules a company gives itself so that its accounts are reliable, and **COSO** is the most widely used framework for organising them. It has five components, of which only one here is code that runs: the third, the control activities. The rest remain as context, except the fourth, which appears marked as partial. That frankness is worth noticing, because a project claiming to cover all five would be selling smoke.
 
-Understanding the most famous test takes a detour. Take a year of invoices and write down only the digit each amount starts with. How many will begin with 1 and how many with 9? Instinct says a ninth each, around 11 %, and on this one instinct is badly wrong. In any set of figures spanning from tens to tens of thousands, 1 appears as the leading digit 30.1 % of the time and 9 barely 4.6 %.
+Understanding the most famous test takes a detour. Take a year of invoices and write down only the digit each amount starts with. How many will begin with 1 and how many with 9? Instinct says a ninth each, around 11 %, and on this one instinct is badly wrong. In any set of figures spanning from tens to tens of thousands, 1 appears as the leading digit 30.1 % of the time and 9 barely 4.6 %. Look at an amount as it grows and you will see the reason. One hundred euros has to double before it leaves the 1 behind and reaches 200, whereas 900 only needs to climb 11 % to come back round to 1. An amount spends far more time starting with 1 than with 9, and a list of invoices is a snapshot of many amounts spread along that path.
 
-Look at an amount as it grows and you will see the reason. One hundred euros has to double before it leaves the 1 behind and reaches 200, whereas 900 only needs to climb 11 % to come back round to 1. An amount spends far more time starting with 1 than with 9, and a list of invoices is a snapshot of many amounts spread along that path. That spread is called **Benford's law**.
+That spread is called **Benford's law**.
 
 Its link to fraud is that whoever invents figures never invents them following that natural curve. They write believable amounts, almost always pressed against the limit they can approve on their own, so those amounts begin over and over with the same two digits. The curve notices it even when each invoice, looked at on its own, seems normal.
 
@@ -281,9 +279,7 @@ There is a fourth point the repository shows nowhere, which comes from applying 
 
 ### When it does not work
 
-Two of the eight tests are marked as informative in the table above, and a third only as a supporting signal. A supplier without filed paperwork usually reflects an old badly documented entry, or a migration done in a hurry, so treating it as fraud would be the project's blunder. The gaps are only worth anything over a ledger whose numbering is guaranteed to be contiguous.
-
-Benford is out of play in a small set of accounts. Look at the subset of hand-picked amounts, which is where a fraudster would be operating: it usually holds a few dozen lines, far away from the five thousand required.
+Two of the eight tests are marked as informative in the table above, and a third only as a supporting signal. A supplier without filed paperwork usually reflects an old badly documented entry, or a migration done in a hurry, so treating it as fraud would be the project's blunder. The gaps are only worth anything over a ledger whose numbering is guaranteed to be contiguous. Benford is out of play in a small set of accounts. Look at the subset of hand-picked amounts, which is where a fraudster would be operating: it usually holds a few dozen lines, far away from the five thousand required.
 
 ### Honest boundary
 
