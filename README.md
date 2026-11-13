@@ -2,6 +2,8 @@ English version: [README.en.md](README.en.md)
 
 # Detección de fraude en el libro diario
 
+[![ci](https://github.com/jleonceo/control-interno-fraude-ia/actions/workflows/ci.yml/badge.svg)](https://github.com/jleonceo/control-interno-fraude-ia/actions/workflows/ci.yml)
+
 Ocho pruebas de auditoría sobre un libro de asientos contables que señalan las líneas que conviene revisar:
 duplicados, pagos partidos para no pasar por la firma del director, proveedores sin documentos, fechas
 imposibles y la ley de Benford, entre otras.

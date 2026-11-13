@@ -2,6 +2,8 @@ Versión en español: [README.md](README.md)
 
 # Fraud detection in the general ledger
 
+[![ci](https://github.com/jleonceo/control-interno-fraude-ia/actions/workflows/ci.yml/badge.svg)](https://github.com/jleonceo/control-interno-fraude-ia/actions/workflows/ci.yml)
+
 Eight audit tests on a ledger of accounting entries that flag the lines worth reviewing: duplicates, payments
 split to avoid the director's signature, suppliers without documents, impossible dates and Benford's law, among
 others.
