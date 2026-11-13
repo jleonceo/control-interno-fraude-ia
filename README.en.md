@@ -28,6 +28,19 @@ is a job for a person with the documents in hand.
 
 ## The eight tests
 
+```mermaid
+flowchart TD
+    L[Journal entries] --> A1[To act on<br/>duplicates, splitting,<br/>near duplicates, dates, Benford]
+    L --> A2[Supporting signal<br/>round amounts]
+    L --> A3[Data quality<br/>supplier without documents,<br/>numbering gaps]
+    A1 & A2 & A3 --> N{Negative controls<br/>normal cases it must not flag}
+    N --> S[Lines flagged for review]
+    S --> H[Human in the loop<br/>the auditor decides]
+    style N fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style H fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+```
+
+
 | Test | What it looks for | Use on real data |
 |---|---|---|
 | Duplicates | The same line repeated: reference, account, debit and credit | Actionable |
