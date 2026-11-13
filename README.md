@@ -33,7 +33,7 @@ flowchart TD
     L[Libro de asientos] --> A1[Para actuar<br/>duplicados, fraccionamiento,<br/>casi duplicados, fechas, Benford]
     L --> A2[Señal de apoyo<br/>importes redondos]
     L --> A3[Calidad del dato<br/>proveedor sin documentos,<br/>huecos de numeración]
-    A1 & A2 & A3 --> N{Controles negativos<br/>casos normales que no debe marcar}
+    A1 & A2 & A3 --> N[Controles negativos<br/>casos normales que no debe marcar]
     N --> S[Líneas señaladas para revisar]
     S --> H[Human in the loop<br/>decide el auditor]
     style N fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
